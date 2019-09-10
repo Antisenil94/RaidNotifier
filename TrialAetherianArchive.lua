@@ -9,6 +9,10 @@ local function dbg() end
 function RaidNotifier.AA.Initialize()
 	p = RaidNotifier.p
 	dbg = RaidNotifier.dbg
+	
+	data = {}
+	data.varlariel_split = 0
+	data.last_varlariel_split = 0	
 end
 
 function RaidNotifier.AA.OnCombatEvent(_, result, isError, aName, aGraphic, aActionSlotType, sName, sType, tName, tType, hitValue, pType, dType, log, sUnitId, tUnitId, abilityId)
@@ -39,6 +43,24 @@ function RaidNotifier.AA.OnCombatEvent(_, result, isError, aName, aGraphic, aAct
 			if settings.stoneatro_bigquake then
 				self:AddAnnouncement(GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_STONEATRO_BIGQUAKE), "archive", "stoneatro_bigquake", 8)
 			end
+		-- Varlariel
+	        --local time = string.format("%s:%03d ", GetTimeString(), GetGameTimeMilliseconds() % 1000)
+	        --d(string.format("%s [%d] %s(%d) %s => %s", time, result, GetAbilityName(abilityId), abilityId, tostring(hitValue), tName))
+		if (buffsDebuffs.door_protection_ice == abilityId) then
+			data.varlariel_split = 0
+			data.last_varlariel_split = 0
+			end
+		elseif (buffsDebuffs.varlariel_split == abilityId) then
+			local deadline_time = data.last_varlariel_split + buffsDebuffs.varlariel_explosion_wipe_time
+			local now = GetGameTimeMilliseconds()
+			if (deadline_time <= now) then
+				data.varlariel_split = 0
+			end
+			if (settings.varlariel_split == true) then
+				self:AddAnnouncement(zo_strformat(GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_VARLARIEL_SPLIT), data.varlariel_split % 3 + 1), "archive", "varlariel_split", 5)
+			end
+			data.varlariel_split = data.varlariel_split + 1
+			data.last_varlariel_split = now			
 		-- Celestial Mage
 		elseif (buffsDebuffs.mage_conjure_axe[abilityId]) then
 			if settings.mage_conjure_axe then
