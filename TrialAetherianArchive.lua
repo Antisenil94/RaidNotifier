@@ -60,7 +60,8 @@ function RaidNotifier.AA.OnCombatEvent(_, result, isError, aName, aGraphic, aAct
 				self:AddAnnouncement(zo_strformat(GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_VARLARIEL_SPLIT), data.varlariel_split % 3 + 1), "archive", "varlariel_split", 5)
 			end
 			data.varlariel_split = data.varlariel_split + 1
-			data.last_varlariel_split = now			
+			data.last_varlariel_split = now	
+			end
 		-- Celestial Mage
 		elseif (buffsDebuffs.mage_conjure_axe[abilityId]) then
 			if settings.mage_conjure_axe then
