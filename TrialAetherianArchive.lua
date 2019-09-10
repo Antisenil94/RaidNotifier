@@ -46,7 +46,7 @@ function RaidNotifier.AA.OnCombatEvent(_, result, isError, aName, aGraphic, aAct
 		-- Varlariel
 	        --local time = string.format("%s:%03d ", GetTimeString(), GetGameTimeMilliseconds() % 1000)
 	        --d(string.format("%s [%d] %s(%d) %s => %s", time, result, GetAbilityName(abilityId), abilityId, tostring(hitValue), tName))
-		if (buffsDebuffs.varlariel_split == abilityId and ) then
+		if (buffsDebuffs.varlariel_split == abilityId) then
 			data.varlariel_split = 0
 			data.last_varlariel_split = 0
 			end
