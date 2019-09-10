@@ -42,6 +42,10 @@ archive.stormatro_lightningstorm = 47898 --the lightning from the sky
 archive.stoneatro_boulderstorm = 48240   --induvidual boulders are 49311
 archive.stoneatro_bigquake     = 49098
 
+-- Varlariel
+archive.varlariel_split = 47762 
+archive.varlariel_explosion_wipe_time = 30000
+
 -- Celestial Mage
 archive.mage_conjure_axe = {}
 archive.mage_conjure_axe[49506] = true
