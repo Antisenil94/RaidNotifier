@@ -182,6 +182,7 @@ do ------------------
 			stormatro_lightningstorm = false,
 			stoneatro_boulderstorm = false,
 			stoneatro_bigquake     = false,
+			varlariel_split        = true,
 			overcharge        = 0, --"Off"
 			call_lightning    = 1, --"Self"
 		},
@@ -983,6 +984,11 @@ function RaidNotifier:CreateSettingsMenu()
 		name = L.Settings_Archive_StoneAtro_BigQuake,
 		tooltip = L.Settings_Archive_StoneAtro_BigQuake_TT,
 	}, "archive", "stoneatro_bigquake")
+	MakeControlEntry({
+		type = "checkbox",
+		name = L.Settings_Archive_Varlariel_Split,
+		tooltip = L.Settings_Archive_Varlariel_Split_TT,
+	}, "archive", "varlariel_split")
 	MakeControlEntry({
 		type = "dropdown",
 		name = L.Settings_Archive_Overcharge,
