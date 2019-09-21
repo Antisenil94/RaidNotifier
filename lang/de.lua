@@ -1,4 +1,4 @@
-local L = {}
+﻿local L = {}
  
 L.Description                            = "Zeigt Benachrichtigungen zu verschiedenen Ereignissen während einer Prüfung(Raid) an."
  
@@ -150,6 +150,8 @@ L.Settings_Archive_StoneAtro_BigQuake               = "Stein Atro: Großes Erdbe
 L.Settings_Archive_StoneAtro_BigQuake_TT            = "Warnt dich, wenn der Stein-Atronach auf den Boden stampft."
 L.Settings_Archive_Varlariel_Split                  = "Varlariel: Split"
 L.Settings_Archive_Varlariel_Split_TT               = "Warnt dich, wenn Varlariels Klone spawnen."
+L.Settings_Archive_Varlariel_Explosion              = "Varlariel: Explosion"
+L.Settings_Archive_Varlariel_Explosion_TT           = "Warnt dich, wenn Varlariels Klone explodieren."
 L.Settings_Archive_Overcharge                       = "Mobs: Überladung"
 L.Settings_Archive_Overcharge_TT                    = "Warnt dich, wenn ein Überlader dich mit seiner Überladung-Fähigkeit angreift."
 L.Settings_Archive_Call_Lightning                   = "Mobs: Blitz Herbeirufen"
@@ -159,7 +161,8 @@ L.Alerts_Archive_StormAtro_ImpendingStorm           = "Eingehender |cFF0000Aufzi
 L.Alerts_Archive_StormAtro_LightningStorm           = "Eingehender |cfef92eGewittersturm|r! Geh in das Licht!"
 L.Alerts_Archive_StoneAtro_BoulderStorm             = "Eingehender |cFF0000Steinschlag|r! Blocken vermeidet Rückstoß!"
 L.Alerts_Archive_StoneAtro_BigQuake                 = "Eingehendes |cFF0000Großes Erdbeben|r!"
-L.Alerts_Archive_Varlariel_Split                    = "|c00ddffSplit|r in (<<1>>)"
+L.Alerts_Archive_Varlariel_Split_Countdown          = "|c00ddffSplit|r in (<<1>>)"
+L.Alerts_Archive_Varlariel_Explosion_Countdown      = "|c00ddffExplosion|r in (<<1>>)"
 L.Alerts_Archive_Overcharge                         = "Eingehende |c46edffÜberladung|r auf dir."
 L.Alerts_Archive_Overcharge_Other                   = "Eingehende |c46edffÜberladung|r auf |cFF0000<<!aC:1>>|r."
 L.Alerts_Archive_Call_Lightning                     = "Eingehender |c46edffBlitz Herbeirufen|r auf dir. Bleib in Bewegung!"
