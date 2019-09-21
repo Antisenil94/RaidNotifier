@@ -41,12 +41,12 @@ function RaidNotifier.AA.OnCombatEvent(_, result, isError, aName, aGraphic, aAct
 				self:AddAnnouncement(GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_STONEATRO_BIGQUAKE), "archive", "stoneatro_bigquake", 8)
 			end
 		-- Varlariel
-		elseif (buffsDebuffs.archive.valariel_split[abilityId]) then
+		elseif (buffsDebuffs.valariel_split[abilityId]) then
 			if (settings.valariel_explosion == true) then
 				self:StartCountdown(buffsDebuffs.varlariel_explosion_wipe_time, GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_VARLARIEL_EXPLOSION_COUNTDOWN), "archive", "varlariel_explosion", false)
 			end
 		elseif (buffsDebuffs.valariel_explosion == abilityId) then
-			local deadline_time = buffsDebuffs.valariel_split_time
+			local deadline_time = buffsDebuffs.valariel_split_time - buffsDebuffs.varlariel_explosion_wipe_time
 			local now = 10
 			if (deadline_time <= now) then
 				if (settings.valariel_split == true) then
