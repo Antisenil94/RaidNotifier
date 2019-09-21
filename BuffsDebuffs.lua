@@ -1,4 +1,4 @@
-RaidNotifier = RaidNotifier or {}
+﻿RaidNotifier = RaidNotifier or {}
 RaidNotifier.BuffsDebuffs = {}
 
 -- ---------------------------------------------------
@@ -43,7 +43,17 @@ archive.stoneatro_boulderstorm = 48240   --induvidual boulders are 49311
 archive.stoneatro_bigquake     = 49098
 
 -- Varlariel
-archive.varlariel_split = 47762 --48641
+archive.valariel_split = {}
+archive.valariel_split[51510] = true
+archive.valariel_split[51513] = true
+archive.valariel_split[51516] = true
+archive.valariel_split[51517] = true
+archive.valariel_split[51518] = true
+archive.valariel_split[51531] = true
+-- archive.valariel_split = 48671 --Mother Clone
+-- archive.varlariel_split = 48671 
+archive.valariel_explosion = 49747 --Clone Blast Origin
+archive.varlariel_split_time = 59000  --actually, it's 61 seconds, but many Ultis have a "drop-time"
 archive.varlariel_explosion_wipe_time = 30000
 
 -- Celestial Mage

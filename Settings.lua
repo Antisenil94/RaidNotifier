@@ -183,6 +183,7 @@ do ------------------
 			stoneatro_boulderstorm = false,
 			stoneatro_bigquake     = false,
 			varlariel_split        = true,
+			varlariel_explosion    = true,
 			overcharge        = 0, --"Off"
 			call_lightning    = 1, --"Self"
 		},

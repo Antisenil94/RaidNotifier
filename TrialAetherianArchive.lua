@@ -10,9 +10,6 @@ function RaidNotifier.AA.Initialize()
 	p = RaidNotifier.p
 	dbg = RaidNotifier.dbg
 	
-	data = {}
-	data.varlariel_split = 0
-	data.last_varlariel_split = 0	
 end
 
 function RaidNotifier.AA.OnCombatEvent(_, result, isError, aName, aGraphic, aActionSlotType, sName, sType, tName, tType, hitValue, pType, dType, log, sUnitId, tUnitId, abilityId)
@@ -44,23 +41,18 @@ function RaidNotifier.AA.OnCombatEvent(_, result, isError, aName, aGraphic, aAct
 				self:AddAnnouncement(GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_STONEATRO_BIGQUAKE), "archive", "stoneatro_bigquake", 8)
 			end
 		-- Varlariel
-	        --local time = string.format("%s:%03d ", GetTimeString(), GetGameTimeMilliseconds() % 1000)
-	        --d(string.format("%s [%d] %s(%d) %s => %s", time, result, GetAbilityName(abilityId), abilityId, tostring(hitValue), tName))
-		if (buffsDebuffs.varlariel_split == abilityId) then
-			data.varlariel_split = 0
-			data.last_varlariel_split = 0
+		elseif (buffsDebuffs.archive.valariel_split[abilityId]) then
+			if (settings.valariel_explosion == true) then
+				self:StartCountdown(buffsDebuffs.varlariel_explosion_wipe_time, GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_VARLARIEL_EXPLOSION_COUNTDOWN), "archive", "varlariel_explosion", false)
 			end
-		elseif (buffsDebuffs.varlariel_split == abilityId) then
-			local deadline_time = data.last_varlariel_split + buffsDebuffs.varlariel_explosion_wipe_time
-			local now = GetGameTimeMilliseconds()
+		elseif (buffsDebuffs.valariel_explosion == abilityId) then
+			local deadline_time = buffsDebuffs.valariel_split_time
+			local now = 10
 			if (deadline_time <= now) then
-				data.varlariel_split = 0
+				if (settings.valariel_split == true) then
+				self:self:StartCountdown(now, GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_VARLARIEL_SPLIT_COUNTDOWN), "archive", "valariel_split", false)
+				end
 			end
-			if (settings.varlariel_split == true) then
-				self:AddAnnouncement(zo_strformat(GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_VARLARIEL_SPLIT), data.varlariel_split % 3 + 1), "archive", "varlariel_split", 5)
-			end
-			data.varlariel_split = data.varlariel_split + 1
-			data.last_varlariel_split = now	
 		-- Celestial Mage
 		elseif (buffsDebuffs.mage_conjure_axe[abilityId]) then
 			if settings.mage_conjure_axe then
