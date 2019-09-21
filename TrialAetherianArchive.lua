@@ -46,11 +46,11 @@ function RaidNotifier.AA.OnCombatEvent(_, result, isError, aName, aGraphic, aAct
 				self:StartCountdown(buffsDebuffs.varlariel_explosion_wipe_time, GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_VARLARIEL_EXPLOSION_COUNTDOWN), "archive", "varlariel_explosion", false)
 			end
 		elseif (buffsDebuffs.valariel_explosion == abilityId) then
-			local deadline_time = buffsDebuffs.valariel_split_time - buffsDebuffs.varlariel_explosion_wipe_time
+			local deadline_time = (buffsDebuffs.valariel_split_time - buffsDebuffs.varlariel_explosion_wipe_time)
 			local now = 10
 			if (deadline_time <= now) then
 				if (settings.valariel_split == true) then
-				self:self:StartCountdown(now, GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_VARLARIEL_SPLIT_COUNTDOWN), "archive", "valariel_split", false)
+				self:StartCountdown(now, GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_VARLARIEL_SPLIT_COUNTDOWN), "archive", "valariel_split", false)
 				end
 			end
 		-- Celestial Mage
