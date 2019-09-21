@@ -991,6 +991,11 @@ function RaidNotifier:CreateSettingsMenu()
 		tooltip = L.Settings_Archive_Varlariel_Split_TT,
 	}, "archive", "varlariel_split")
 	MakeControlEntry({
+		type = "checkbox",
+		name = L.Settings_Archive_Varlariel_Explosion,
+		tooltip = L.Settings_Archive_Varlariel_Explosion_TT,
+	}, "archive", "varlariel_explosion")
+	MakeControlEntry({
 		type = "dropdown",
 		name = L.Settings_Archive_Overcharge,
 		tooltip = L.Settings_Archive_Overcharge_TT,
