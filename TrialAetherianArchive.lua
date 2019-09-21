@@ -41,16 +41,16 @@ function RaidNotifier.AA.OnCombatEvent(_, result, isError, aName, aGraphic, aAct
 				self:AddAnnouncement(GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_STONEATRO_BIGQUAKE), "archive", "stoneatro_bigquake", 8)
 			end
 		-- Varlariel
-		elseif (buffsDebuffs.valariel_split[abilityId]) then
-			if (settings.valariel_explosion == true) then
+		elseif (buffsDebuffs.varlariel_split[abilityId]) then
+			if (settings.varlariel_explosion == true) then
 				self:StartCountdown(buffsDebuffs.varlariel_explosion_wipe_time, GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_VARLARIEL_EXPLOSION_COUNTDOWN), "archive", "varlariel_explosion", false)
 			end
-		elseif (buffsDebuffs.valariel_explosion == abilityId) then
-			local deadline_time = (buffsDebuffs.valariel_split_time - buffsDebuffs.varlariel_explosion_wipe_time)
+		elseif (buffsDebuffs.varlariel_explosion == abilityId) then
+			local deadline_time = (buffsDebuffs.varlariel_split_time - buffsDebuffs.varlariel_explosion_wipe_time)
 			local now = 10
 			if (deadline_time <= now) then
-				if (settings.valariel_split == true) then
-				self:StartCountdown(now, GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_VARLARIEL_SPLIT_COUNTDOWN), "archive", "valariel_split", false)
+				if (settings.varlariel_split == true) then
+				self:StartCountdown(now, GetString(RAIDNOTIFIER_ALERTS_ARCHIVE_VARLARIEL_SPLIT_COUNTDOWN), "archive", "varlariel_split", false)
 				end
 			end
 		-- Celestial Mage
