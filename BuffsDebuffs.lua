@@ -1,4 +1,4 @@
-﻿RaidNotifier = RaidNotifier or {}
+RaidNotifier = RaidNotifier or {}
 RaidNotifier.BuffsDebuffs = {}
 
 -- ---------------------------------------------------
