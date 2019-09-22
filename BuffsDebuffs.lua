@@ -1,4 +1,4 @@
-RaidNotifier = RaidNotifier or {}
+﻿RaidNotifier = RaidNotifier or {}
 RaidNotifier.BuffsDebuffs = {}
 
 -- ---------------------------------------------------
@@ -44,15 +44,31 @@ archive.stoneatro_bigquake     = 49098
 
 -- Varlariel
 archive.varlariel_split = {}
-archive.varlariel_split[48671] = true
-archive.varlariel_split[51510] = true
-archive.varlariel_split[51513] = true
-archive.varlariel_split[51516] = true
-archive.varlariel_split[51517] = true
-archive.varlariel_split[51518] = true
-archive.varlariel_split[51531] = true
--- archive.valariel_split = 48671 --Mother Clone
-archive.varlariel_explosion = 49747 --Clone Blast Origin
+archive.varlariel_split[48671] = true --Mother Clone
+archive.varlariel_split[51510] = true --Mother Clone
+archive.varlariel_split[51513] = true --Clone
+archive.varlariel_split[51516] = true --Clone
+archive.varlariel_split[51517] = true --Clone
+archive.varlariel_split[51518] = true --Clone
+archive.varlariel_split[51519] = true --Mother Clone
+archive.varlariel_split[51522] = true --Clone
+archive.varlariel_split[51523] = true --Clone
+archive.varlariel_split[51525] = true --Clone
+archive.varlariel_split[51526] = true --Clone
+archive.varlariel_split[51527] = true --Clone
+archive.varlariel_split[51528] = true --Mother Clone
+archive.varlariel_split[51531] = true --Clone
+archive.varlariel_split[51532] = true --Clone
+archive.varlariel_split[51533] = true --Clone
+archive.varlariel_split[51534] = true --Clone
+archive.varlariel_split[51535] = true --Clone
+archive.varlariel_split[51536] = true --Clone
+archive.varlariel_split[51531] = true --Clone
+archive.varlariel_explosion = {}
+archive.varlariel_explosion[49747] = true --Clone Blast Origin
+archive.varlariel_explosion[49752] = true --Clone Blast
+archive.varlariel_explosion[50329] = true --Clone Blast
+archive.varlariel_explosion[51490] = true --Clone Blast Origin
 archive.varlariel_split_time = 59000  --actually, it's 61 seconds, but many Ultis have a "drop-time"
 archive.varlariel_explosion_wipe_time = 30000
 
